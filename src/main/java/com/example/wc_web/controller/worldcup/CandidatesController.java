@@ -1,27 +1,51 @@
 package com.example.wc_web.controller.worldcup;
 
+import com.example.wc_web.domain.worldcup.Candidate;
 import com.example.wc_web.dto.worldcup.request.CreateCandidatesRequest;
 import com.example.wc_web.service.worldcup.CandidatesService;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class CandidatesController {
-    private CandidatesService candidatesService;
+    final private CandidatesService candidatesService;
 
     public CandidatesController(CandidatesService candidatesService){
         this.candidatesService = candidatesService;
     }
 
-    @PostMapping("/candidates/{worldcupId}")
+    // 이상형 월드컵 후보자 등록하기
+    @PostMapping("/candidates/{worldCupId}")
     public void createCandidates(
-            @PathVariable Integer worldcupId,
+            @PathVariable Integer worldCupId,
             @RequestBody List<CreateCandidatesRequest> requests
     ){
-        candidatesService.createCandidates(requests,worldcupId);
+        candidatesService.createCandidates(requests,worldCupId);
+    }
+
+    // 이상형 월드컵 후보자 불러오기
+    @GetMapping("/candidates/{worldCupId}")
+    public List<Candidate> getCandidates(
+            @PathVariable Integer worldCupId
+    ){
+       return candidatesService.getCandidates(worldCupId);
+    }
+
+    // 이상형 월드컵 후보자 정보 수정
+    @PutMapping("/candidates/{candidateId}")
+    public void updateCandidate(
+            @PathVariable Integer candidateId,
+            @RequestBody CreateCandidatesRequest request
+    ){
+        candidatesService.updateCandidate(candidateId,request);
+    }
+
+    // 이상형 월드컵 후보자 정보 삭제
+    @DeleteMapping("/candidates/{candidateId}")
+    public void deleteCandidate(
+            @PathVariable Integer candidateId
+    ){
+        candidatesService.deleteCandidate(candidateId);
     }
 }

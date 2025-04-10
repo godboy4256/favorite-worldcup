@@ -1,12 +1,13 @@
 package com.example.wc_web.domain.worldcup;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
 
 @Getter
+@Setter
 @Entity
 public class WorldCup {
     @Id
@@ -22,6 +23,10 @@ public class WorldCup {
         this.description = description;
         this.thumbnail = thumbnail;
     }
+
+
+    @OneToMany(mappedBy = "worldCup", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Candidate> candidates;
 
     public WorldCup(){};
 }

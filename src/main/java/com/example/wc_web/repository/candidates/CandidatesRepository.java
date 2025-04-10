@@ -1,7 +1,12 @@
 package com.example.wc_web.repository.candidates;
 
-import com.example.wc_web.domain.worldcup.Candidates;
+import com.example.wc_web.domain.worldcup.Candidate;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CandidatesRepository extends JpaRepository<Candidates, Integer> {
+import java.util.List;
+import java.util.Optional;
+
+public interface CandidatesRepository extends JpaRepository<Candidate, Integer> {
+    List<Candidate> findByWorldCupId(Integer worldCupId);
+    Optional<Candidate> findById(Integer candidateId);
 }
