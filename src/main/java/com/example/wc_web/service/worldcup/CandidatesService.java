@@ -3,7 +3,7 @@ package com.example.wc_web.service.worldcup;
 import com.example.wc_web.domain.worldcup.Candidate;
 import com.example.wc_web.domain.worldcup.WorldCup;
 import com.example.wc_web.dto.worldcup.request.CreateCandidatesRequest;
-import com.example.wc_web.repository.candidates.CandidatesRepository;
+import com.example.wc_web.repository.worldcup.CandidatesRepository;
 import com.example.wc_web.repository.worldcup.WorldCupRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;

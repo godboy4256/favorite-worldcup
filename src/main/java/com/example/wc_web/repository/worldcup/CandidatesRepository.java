@@ -1,4 +1,4 @@
-package com.example.wc_web.repository.candidates;
+package com.example.wc_web.repository.worldcup;
 
 import com.example.wc_web.domain.worldcup.Candidate;
 import org.springframework.data.jpa.repository.JpaRepository;

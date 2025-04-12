@@ -21,8 +21,8 @@ public class WorldCupService {
         return worldCupRepository.findAll();
     }
 
-    public void createWorldCup(String title, String description, String thumbnail){
-        worldCupRepository.save(new WorldCup(title, description, thumbnail));
+    public void createWorldCup(CreateWorldCupRequest request){
+        worldCupRepository.save(new WorldCup(request.getTitle(), request.getDescription(), request.getThumbnail()));
     }
 
     @Transactional // 변경을 감지하면 변경해줄 필요가 없도록 하기

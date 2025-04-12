@@ -18,7 +18,7 @@ public class WorldCupController {
 
     @PostMapping("/world_cup") // 이상형 월드컵 정보 생성
     public void createWorldCup(@RequestBody CreateWorldCupRequest request){
-        worldCupService.createWorldCup(request.getTitle(), request.getDescription(), request.getThumbnail());
+        worldCupService.createWorldCup(request);
     }
 
     @GetMapping("/world_cup") // 메인 페이지 이상형 월드컵 리스트 목록 조회

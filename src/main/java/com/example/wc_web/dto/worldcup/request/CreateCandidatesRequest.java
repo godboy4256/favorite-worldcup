@@ -7,7 +7,7 @@ public class CreateCandidatesRequest {
     private String name;
     private String image;
 
-    public CreateCandidatesRequest(Integer worldcup_id, String name, String image) {
+    public CreateCandidatesRequest(String name, String image) {
         this.name = name;
         this.image = image;
     }
