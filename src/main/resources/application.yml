@@ -1,4 +1,6 @@
 spring:
+  jwt:
+    secret: d6877047c61e57fdb1cf05c6cc9f8000fbd5ab9fff8ac0be6a6571486aa71c4645ab368639fd8c02467899a2e3950084ee787885bf50894f09a97fd9ce331664726dc4d1d747a98fb2b986e83fe9de86ee6c4442f61b8d9382e6bb316a146147ab8078b795cd3b8a1db923981cf026ecd27827a4d742035f19266ccd0e7278540addb06d1fcb18cd7a3437e7db5d7cbc6f872cff6dfe517f5222cda4c6812264708e524805c2b71ce6f5df7c31cebb32a8bf15abd3f67bcb33a518c3c475edd7dfcd5c597771036ab7e1804fb3cdea8a744b8ab91f06a5ec1c7192d61fd7ed178e5e23a241016b0aa40b10f523db4a5625c7f831447cee048406943673591dec
   datasource:
     url: "jdbc:mysql://localhost/favorite_worldcup"
     username: "root"
@@ -12,3 +14,5 @@ spring:
         format_sql: true
         show_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
+
+
